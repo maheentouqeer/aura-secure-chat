@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 4%;
+    --foreground: 0 0% 95%;
+    --card: 240 10% 6%;
+    --card-foreground: 0 0% 95%;
+    --popover: 240 10% 6%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 152 100% 50%;
+    --primary-foreground: 240 10% 4%;
+    --secondary: 240 10% 12%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 240 10% 15%;
+    --muted-foreground: 240 5% 55%;
+    --accent: 188 100% 50%;
+    --accent-foreground: 240 10% 4%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 10% 20%;
+    --input: 240 10% 20%;
+    --ring: 152 100% 50%;
+    --radius: 0.5rem;
+    
+    /* Cyber colors */
+    --cyber-green: 152 100% 50%;
+    --cyber-cyan: 188 100% 50%;
+    --cyber-purple: 280 100% 60%;
+    --cyber-red: 0 84% 60%;
+    --cyber-yellow: 45 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-secondary;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
+
+@layer utilities {
+  .glow-green {
+    box-shadow: 0 0 10px hsl(var(--cyber-green) / 0.5),
+                0 0 20px hsl(var(--cyber-green) / 0.3),
+                0 0 30px hsl(var(--cyber-green) / 0.1);
+  }
+  
+  .glow-cyan {
+    box-shadow: 0 0 10px hsl(var(--cyber-cyan) / 0.5),
+                0 0 20px hsl(var(--cyber-cyan) / 0.3);
+  }
+  
+  .glow-red {
+    box-shadow: 0 0 10px hsl(var(--cyber-red) / 0.5),
+                0 0 20px hsl(var(--cyber-red) / 0.3);
+  }
+  
+  .text-glow-green {
+    text-shadow: 0 0 10px hsl(var(--cyber-green) / 0.8);
+  }
+  
+  .text-glow-cyan {
+    text-shadow: 0 0 10px hsl(var(--cyber-cyan) / 0.8);
+  }
+  
+  .border-glow-green {
+    border-color: hsl(var(--cyber-green));
+    box-shadow: 0 0 5px hsl(var(--cyber-green) / 0.5),
+                inset 0 0 5px hsl(var(--cyber-green) / 0.1);
+  }
+  
+  .cyber-grid {
+    background-image: 
+      linear-gradient(hsl(var(--cyber-green) / 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--cyber-green) / 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
